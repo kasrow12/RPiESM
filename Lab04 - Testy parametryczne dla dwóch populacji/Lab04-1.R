@@ -21,15 +21,15 @@ cat('a) p-value =', wynik, '> 0.05 -> nie ma podstaw do odrzucenia H0')
 # p_k = p1
 # p_w = p2
 wynik = power.prop.test(n=c(220, 233), p1=0.14, p2=0.17, alt='one.sided')$power
-cat('\nb i) power € ', wynik)
+cat('\nb) (i) power € [', wynik, ']')
 
 
 #   (ii) Ilu mieszkańców Warszawy i ilu mieszkańców Krakowa trzeba by wylosować
 #       do próby by, z prawdopodobieństwem nie mniejszym niż 0,8, jednostronny
 #       test o poziomie istotności 0,05 porównujący odsetek regularnych klientów
 #       Żuczka potwierdził, że odsetek ten jest większy w Warszawie niż w Krakowie?
-wynik = power.prop.test(power=0.8, p1=0.14, p2=0.17, alt='one.sided')$power
-cat('\nb ii) n =', wynik) # ?????
+wynik = power.prop.test(power=0.8, p1=0.14, p2=0.17, alt='one.sided')$n
+cat('\n   (ii) n =', ceiling(wynik))
 
   
 
