@@ -17,6 +17,7 @@ dane = c(140,280,235,200,100,45)
 # dane0 = c(rep(0, 140), rep(1, 280), rep(2, 235), rep(3, 200), rep(4, 100), rep(5, 45))
 
 dane0 = rep(0:5, dane)
+library(MASS)
 est.lambdy = fitdistr(dane0, "Poisson")$est
 
 prob = c(dpois(0:4, est.lambdy), ppois(4, est.lambdy, lower.tail=F))
