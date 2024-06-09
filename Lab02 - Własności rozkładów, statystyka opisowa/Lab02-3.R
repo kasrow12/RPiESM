@@ -15,4 +15,4 @@ barplot(pz, names.arg=0:100)
 
 # ten bardziej oddaje że dyskretne
 plot(0:10, px, pch=19, type='h', lwd=2, las=1, col=10, lty=1)
-
+par(mfrow=c(1,1))

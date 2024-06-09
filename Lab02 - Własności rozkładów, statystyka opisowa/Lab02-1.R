@@ -2,7 +2,7 @@
 # normalnego. Narysować dla obu prób dystrybuanty empiryczne i porównać je
 # z odpowiednią dystrybuantą teoretyczną.
 
-n = 1000
+n = 100
 ex = 2;
 sd = 4;
 dane = rnorm(n, ex, sd)

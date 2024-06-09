@@ -46,8 +46,10 @@ b = boxplot(Cars93$MPG.city~Cars93$Origin)
 
 # d) Narysować wykres słupkowy i kołowy dla zmiennej Type. Ile, spośród
 # badanych samochodów, zaliczono do kategorii sportowe?
+par(mfrow=c(1,2))
 typ = table(Cars93$Type)
-table(typ)
 barplot(typ, col='salmon')
+
 pie(typ) #labels
 # paste()
+par(mfrow=c(1,1))
