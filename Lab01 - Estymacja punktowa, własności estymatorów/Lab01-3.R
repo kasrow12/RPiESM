@@ -34,3 +34,4 @@ plot(n2, sds[n2], type = "l", xlab = "i", ylab = "", las = 1,
 lines(n2, iqrs[n2], type = "l", col = "red",  lty = 2)
 legend("bottomleft", legend = c("Odchylenie std", "IQR"), col = c("green", "red"), lty = 1)
 abline(h = d, col = "blue")
+par(mfrow = c(1,1))
