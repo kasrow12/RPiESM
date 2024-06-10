@@ -16,7 +16,7 @@
 # n=400
 # sumaXi = K -> k=128
 # p z daszkiem = p/n (we wzorze na piechotę z kartki)
-#         k
+#                 k
 wynik = prop.test(x=128, n=400, p=0.35, alt='less')$p.value
 cat('a) p-value =', wynik, '> alfa=0.05 -> nie ma podstaw do odrzucenia H')
 

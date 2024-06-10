@@ -18,11 +18,11 @@ cat('a) [', t.test(dane, conf.level=0.95)$conf.int, ']')
 # H1: mi > 23 // większe -> pole na prawo od punktu t
 
 test = t.test(dane, mu=23, alt='greater')
-# pvalue = 0.39 => 0.39 > alfa => nie ma podstaw do odrzucenia H0
 
 # można też                 \/ n-1
 # p-value = 1-pt(t, length(dane)-1) = pt(t, n-1, lower.tail=F)
-cat('\nb) p-value =', test$p.value, ', t =', test$statistic) 
+cat('\nb) p-value =', test$p.value, '> 0.05 => nie ma podstaw do odrzucenia H0,',
+  't =', test$statistic) 
 
 
 # c) Zakładając, że rzeczywista średnia waga młodych kóz hodowanych
@@ -33,7 +33,7 @@ cat('\nb) p-value =', test$p.value, ', t =', test$statistic)
 # P(nie odrz. H0 | H1 prawdziwe, mi = 24) = P(błąd II rodzaju) = 1 - moc()
 wynik = 1 - power.t.test(n=40, delta=24-23, sd=sd(dane), type="one.sample",
                      alternative="one.sided", sig.level=0.05)$power
-cat('\nc) delta =', wynik)
+cat('\nc)', wynik)
 
 
 # d) Załóżmy, że rzeczywista średnia waga młodych kóz hodowanych w Australii
@@ -43,7 +43,7 @@ cat('\nc) delta =', wynik)
 
 wynik = power.t.test(power=0.8, delta=24-23, sd=sd(dane), type="one.sample",
                          alternative="one.sided", sig.level=0.05)$n
-cat('\nd) delta =', wynik, 'czyli', ceiling(wynik), 'kóz')
+cat('\nd) n =', wynik, 'czyli', ceiling(wynik), 'kóz')
 
 
 # e) Utworzyć 90% przedział ufności dla wariancji wagi młodych kóz
@@ -59,7 +59,7 @@ cat('\ne) [', wynik, ']')
 # H0: sigmasq = 20 = sigma_0^2
 # H1: sigmasq != 20
 wynik = sigma.test(dane, sigmasq=20)$p.value
-cat('\nf) p-value =', wynik, '< alfa=0.1')
+cat('\nf) p-value =', wynik, '< alfa=0.1 => odrzucamy H0')
 
 
 # g) Na poziomie istotności 0,1 zweryfikować hipotezę, że odchylenie standardowe
@@ -69,5 +69,5 @@ cat('\nf) p-value =', wynik, '< alfa=0.1')
 # H1: sigma > 3
 # alfa = 0.1
 wynik = sigma.test(dane, sigma=3, alt='greater')$p.value
-cat('\ng) p-value =', wynik, '< alfa=0.1') # ?
+cat('\ng) p-value =', wynik, '< alfa=0.1 => odrzucamy H0')
 
