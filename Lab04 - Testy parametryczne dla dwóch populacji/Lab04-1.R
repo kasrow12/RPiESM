@@ -3,7 +3,7 @@
 # 220 zapytane osoby, 31 okazało się klientami Żuczka.
 
 # H0: p_k = p_w
-# H1: p_w > p_k
+# H1: p_k < p_w
 
 # a) Czy na podstawie powyższych danych można stwierdzić, że odsetek regularnych
 # klientów Żuczka w Warszawie jest większy niż w Krakowie? Przyjąć poziom
